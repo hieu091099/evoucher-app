@@ -1,7 +1,7 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
-import {ActivityIndicator, MD2Colors} from 'react-native-paper';
-
+import {ActivityIndicator} from 'react-native-paper';
+import colors from '../../utils/color';
 export default function Loading() {
   return (
     <View
@@ -14,8 +14,8 @@ export default function Loading() {
         alignItems: 'center',
         opacity: 0.5,
       }}>
-      <View style={{backgroundColor: MD2Colors.white, padding: 32}}>
-        <ActivityIndicator animating={true} color={MD2Colors.indigoA200} />
+      <View style={{backgroundColor: colors.white, padding: 32}}>
+        <ActivityIndicator animating={true} color={colors.indigoA200} />
       </View>
     </View>
   );

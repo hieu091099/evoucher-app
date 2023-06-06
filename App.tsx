@@ -2,23 +2,24 @@
 
 import * as React from 'react';
 import 'react-native-gesture-handler';
+import {Provider} from 'react-redux';
+import {NavigationContainer} from '@react-navigation/native';
 import {PersistGate} from 'redux-persist/integration/react';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
-import {primaryColor} from './utils/color';
-import {Provider} from 'react-redux';
-import {store, persistor} from './redux/store';
-import AppNavigator from './navigations';
-import Loading from './components/Loading';
-import {NavigationContainer} from '@react-navigation/native';
-import {navigationRef} from './navigations/services';
-import withAuth from './middlewares/withAuth';
+
+import colors from './src/utils/color';
+import {store, persistor} from './src/redux/store';
+import AppNavigator from './src/navigations/index';
+import Loading from './src/components/Loading';
+import {navigationRef} from './src/navigations/services';
+import withAuth from './src/middlewares/withAuth';
 
 const theme = {
   ...DefaultTheme,
   roundness: 2,
   colors: {
     ...DefaultTheme.colors,
-    primary: primaryColor,
+    primary: colors.blueA400,
     accent: '#f1c40f',
   },
 };

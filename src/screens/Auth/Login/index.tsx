@@ -8,7 +8,7 @@ const loginImage = require('../../../assets/images/login.jpg');
 const googleImage = require('../../../assets/images/icon-google.png');
 const faceBookImage = require('../../../assets/images/icon-facebook.png');
 import {login} from '../../../redux/actions/authAction';
-import {primaryColor} from '../../../utils/color';
+import colors from '../../../utils/color';
 import Loading from '../../../components/Loading';
 
 const Login = () => {
@@ -36,7 +36,7 @@ const Login = () => {
           width: '100%',
           height: '100%',
         }}>
-        <Text style={{fontSize: 32, marginTop: 32, color: primaryColor}}>
+        <Text style={{fontSize: 32, marginTop: 32, color: colors.blueA400}}>
           Sign In
         </Text>
         <ImageBackground
@@ -65,14 +65,14 @@ const Login = () => {
             fontSize: 16,
             fontWeight: 500,
             marginTop: 8,
-            color: primaryColor,
+            color: colors.blueA400,
           }}>
           Forgot Password?
         </Text>
         <Button
           icon="login"
           mode="contained"
-          style={{marginTop: 20, padding: 5, backgroundColor: primaryColor}}
+          style={{marginTop: 20, padding: 5, backgroundColor: colors.blueA400}}
           onPress={handleLogin}>
           Login
         </Button>
@@ -87,7 +87,7 @@ const Login = () => {
             fontSize: 16,
             marginBottom: 16,
             marginTop: 5,
-            color: primaryColor,
+            color: colors.blueA400,
           }}>
           Sign Up!
         </Text>
@@ -96,7 +96,7 @@ const Login = () => {
           <TouchableOpacity
             style={{
               borderWidth: 0.5,
-              borderColor: primaryColor,
+              borderColor: colors.blueA400,
               paddingVertical: 10,
               paddingHorizontal: 10,
               borderRadius: 10,
@@ -109,7 +109,7 @@ const Login = () => {
           <TouchableOpacity
             style={{
               borderWidth: 0.5,
-              borderColor: primaryColor,
+              borderColor: colors.blueA400,
               paddingVertical: 10,
               paddingHorizontal: 10,
               borderRadius: 10,
