@@ -1,6 +1,19 @@
-import authSaga from './authSaga';
-import {all, fork} from 'redux-saga/effects';
+import {all, spawn, call} from 'redux-saga/effects';
+import watchAuth from './authSaga';
 
-export default function* rootSaga() {
-  yield all([fork(authSaga)]);
+export default function* sagas() {
+  const watches = [watchAuth];
+  yield all(
+    watches.map(saga =>
+      spawn(function* () {
+        while (true) {
+          try {
+            yield call(saga);
+            break;
+            // eslint-disable-next-line no-empty
+          } catch (e) {}
+        }
+      }),
+    ),
+  );
 }

@@ -1,17 +1,18 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import {View, Text} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from './screens/HomeScreen/HomeScreen';
-import Login from './screens/Login/Login';
+import 'react-native-gesture-handler';
+import {PersistGate} from 'redux-persist/integration/react';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
-import {primaryColor} from './ultils/color';
+import {primaryColor} from './utils/color';
 import {Provider} from 'react-redux';
-import configStore from './redux/store';
-const Stack = createNativeStackNavigator();
-const store = configStore();
+import {store, persistor} from './redux/store';
+import AppNavigator from './navigations';
+import Loading from './components/Loading';
+import {NavigationContainer} from '@react-navigation/native';
+import {navigationRef} from './navigations/services';
+import withAuth from './middlewares/withAuth';
+
 const theme = {
   ...DefaultTheme,
   roundness: 2,
@@ -24,16 +25,15 @@ const theme = {
 function App() {
   return (
     <Provider store={store}>
-      <PaperProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Login" component={Login} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </PaperProvider>
+      <PersistGate loading={<Loading />} persistor={persistor}>
+        <PaperProvider theme={theme}>
+          <NavigationContainer ref={navigationRef}>
+            <AppNavigatorWithAuth />
+          </NavigationContainer>
+        </PaperProvider>
+      </PersistGate>
     </Provider>
   );
 }
-
+const AppNavigatorWithAuth: any = withAuth(AppNavigator);
 export default App;
