@@ -10,3 +10,9 @@ export const createRequestTypes = (base: any) => ({
 
 export const LOGOUT = 'LOGOUT';
 export const LOGIN = createRequestTypes('LOGIN');
+
+
+
+
+
+export const SET_BIRD = 'SET_BIRD';

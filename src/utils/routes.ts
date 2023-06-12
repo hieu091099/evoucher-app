@@ -11,6 +11,9 @@ const routes = {
   MAIN: {
     MAIN: 'MAIN',
     HOME: 'HOME',
+    GAME: {
+      FLAPPY_BIRD: 'FLAPPY_BIRD',
+    }
   },
 };
 export default routes;
