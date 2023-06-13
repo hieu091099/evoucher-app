@@ -1,24 +1,150 @@
 import * as React from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  StatusBar,
+} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-const Stack = createNativeStackNavigator();
+import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useDispatch} from 'react-redux';
+import LinearGradient from 'react-native-linear-gradient';
+
 import Home from '../../screens/Main/Home';
 import FlappyBirdClone from '../../screens/Main/Game/FlappyBird';
 import routes from '../../utils/routes';
+import {logout} from '../../redux/actions/authAction';
 
-const MainStack = () => {
+const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
+
+const CustomDrawerContent = props => {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
-    <Stack.Navigator>
-      <Stack.Screen
+    <LinearGradient
+      colors={['#3f51b5', '#3f51b5']}
+      start={{x: 0, y: 0}}
+      end={{x: 1, y: 1}}
+      locations={[0, 0]}
+      style={{flex: 1}}>
+      <View style={{flex: 1, height: '100%', position: 'relative'}}>
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: '#000',
+            zIndex: 1,
+            opacity: 0.5,
+          }}
+        />
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 2,
+            opacity: 1,
+            flex: 1,
+          }}>
+          <ScrollView
+            {...props}
+            contentContainerStyle={{
+              flex: 1,
+              backgroundColor: 'white',
+              borderBottomRightRadius: 50,
+              borderTopRightRadius: 50,
+              zIndex: 5,
+            }}>
+            <View
+              style={{
+                paddingHorizontal: 16,
+                paddingTop: 42,
+              }}>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}>Profile</Text>
+            </View>
+
+            <DrawerItemList {...props} />
+
+            <TouchableOpacity onPress={handleLogout} style={{padding: 16}}>
+              <Text style={{fontSize: 16, fontWeight: 'bold', color: 'red'}}>
+                Logout
+              </Text>
+            </TouchableOpacity>
+          </ScrollView>
+        </View>
+      </View>
+    </LinearGradient>
+  );
+};
+
+export const MainDrawer = () => {
+  return (
+    <Drawer.Navigator
+      initialRouteName={routes.MAIN.MAIN_DRAWER}
+      screenOptions={{
+        drawerStyle: {
+          backgroundColor: 'transparent',
+          borderTopRightRadius: 50,
+          borderBottomRightRadius: 50,
+        },
+      }}
+      drawerType="slide"
+      overlayColor="transparent"
+      drawerContent={CustomDrawerContent}>
+      <Drawer.Screen
+        name={routes.MAIN.MAIN_DRAWER}
+        component={MainTab}
+        options={{headerShown: false}}
+      />
+    </Drawer.Navigator>
+  );
+};
+
+export const MainTab = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
         name={routes.MAIN.HOME}
         component={Home}
         options={{headerShown: false}}
       />
-       <Stack.Screen
+      <Tab.Screen
         name={routes.MAIN.GAME.FLAPPY_BIRD}
         component={FlappyBirdClone}
         options={{headerShown: false}}
       />
-    </Stack.Navigator>
+    </Tab.Navigator>
+  );
+};
+
+const MainStack = () => {
+  return (
+    <>
+      <Stack.Navigator>
+        <Stack.Screen
+          name={routes.MAIN.HOME}
+          component={MainDrawer}
+          options={{headerShown: false}}
+        />
+        {/* <Stack.Screen
+          name={routes.MAIN.GAME.FLAPPY_BIRD}
+          component={FlappyBirdClone}
+          options={{headerShown: false}}
+        /> */}
+      </Stack.Navigator>
+    </>
   );
 };
 

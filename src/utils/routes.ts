@@ -9,6 +9,7 @@ const routes = {
   },
   MAIN_STACK: 'MAIN_STACK',
   MAIN: {
+    MAIN_DRAWER: 'MAIN_DRAWER',
     MAIN: 'MAIN',
     HOME: 'HOME',
     GAME: {
