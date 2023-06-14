@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
-  StatusBar,
+  SafeAreaView,
 } from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
@@ -29,61 +29,50 @@ const CustomDrawerContent = props => {
 
   return (
     <LinearGradient
-      colors={['#3f51b5', '#3f51b5']}
-      start={{x: 0, y: 0}}
+      colors={['#3f51b5', '#3f51b5', '#FFF']}
+      start={{x: 1, y: 0}}
       end={{x: 1, y: 1}}
-      locations={[0, 0]}
-      style={{flex: 1}}>
-      <View style={{flex: 1, height: '100%', position: 'relative'}}>
-        <View
+      style={{flex: 1, height: '100%', position: 'relative'}}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: '#000',
+          zIndex: 1,
+          opacity: 0.5,
+        }}
+      />
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 2,
+          opacity: 1,
+          flex: 1,
+        }}>
+        <SafeAreaView
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: '#000',
-            zIndex: 1,
-            opacity: 0.5,
-          }}
-        />
-        <View
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 2,
-            opacity: 1,
             flex: 1,
+            backgroundColor: 'white',
+            borderBottomRightRadius: 50,
+            borderTopRightRadius: 50,
+            zIndex: 5,
           }}>
-          <ScrollView
-            {...props}
-            contentContainerStyle={{
-              flex: 1,
-              backgroundColor: 'white',
-              borderBottomRightRadius: 50,
-              borderTopRightRadius: 50,
-              zIndex: 5,
-            }}>
-            <View
-              style={{
-                paddingHorizontal: 16,
-                paddingTop: 42,
-              }}>
-              <Text style={{fontSize: 20, fontWeight: 'bold'}}>Profile</Text>
-            </View>
 
-            <DrawerItemList {...props} />
+          <DrawerItemList {...props} />
 
-            <TouchableOpacity onPress={handleLogout} style={{padding: 16}}>
-              <Text style={{fontSize: 16, fontWeight: 'bold', color: 'red'}}>
-                Logout
-              </Text>
-            </TouchableOpacity>
-          </ScrollView>
-        </View>
+          <TouchableOpacity onPress={handleLogout} style={{padding: 16}}>
+            <Text style={{fontSize: 16, fontWeight: 'bold', color: 'red'}}>
+              Logout
+            </Text>
+          </TouchableOpacity>
+        </SafeAreaView>
       </View>
     </LinearGradient>
   );
