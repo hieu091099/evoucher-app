@@ -3,7 +3,7 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView,
+  Animated,
   SafeAreaView,
 } from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -11,11 +11,15 @@ import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useDispatch} from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
-
-import Home from '../../screens/Main/Home';
-import FlappyBirdClone from '../../screens/Main/Game/FlappyBird';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import routes from '../../utils/routes';
 import {logout} from '../../redux/actions/authAction';
+
+import Home from '../../screens/Main/Home';
+import FlappyBirdClone from '../../screens/Game/FlappyBird';
+import Voucher from '../../screens/Main/Voucher';
+import Location from '../../screens/Main/Location';
+import Profile from '../../screens/Main/Profile';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -64,7 +68,6 @@ const CustomDrawerContent = props => {
             borderTopRightRadius: 50,
             zIndex: 5,
           }}>
-
           <DrawerItemList {...props} />
 
           <TouchableOpacity onPress={handleLogout} style={{padding: 16}}>
@@ -107,17 +110,46 @@ export const MainTab = () => {
       <Tab.Screen
         name={routes.MAIN.HOME}
         component={Home}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="home" color={color} size={size} />
+          ),
+        }}
       />
       <Tab.Screen
-        name={routes.MAIN.GAME.FLAPPY_BIRD}
-        component={FlappyBirdClone}
-        options={{headerShown: false}}
+        name={routes.MAIN.VOUCHER}
+        component={Voucher}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="ticket" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={routes.MAIN.LOCATION}
+        component={Location}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="map-marker" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={routes.MAIN.PROFILE}
+        component={Profile}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="user" color={color} size={size} />
+          ),
+        }}
       />
     </Tab.Navigator>
   );
 };
-
 const MainStack = () => {
   return (
     <>
@@ -127,11 +159,11 @@ const MainStack = () => {
           component={MainDrawer}
           options={{headerShown: false}}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name={routes.MAIN.GAME.FLAPPY_BIRD}
           component={FlappyBirdClone}
           options={{headerShown: false}}
-        /> */}
+        />
       </Stack.Navigator>
     </>
   );

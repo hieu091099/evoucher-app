@@ -3,8 +3,8 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import {Button, StyleSheet, SafeAreaView} from 'react-native';
 import { GameEngine } from 'react-native-game-engine';
 import {useDispatch} from 'react-redux';
-import entities from '../../../entities';
-import Physics from '../../../utils/physics';
+import entities from '../../entities';
+import Physics from '../../utils/physics';
 
 
 export default function FlappyBird() {

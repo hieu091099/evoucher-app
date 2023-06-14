@@ -14,7 +14,10 @@ const routes = {
     HOME: 'HOME',
     GAME: {
       FLAPPY_BIRD: 'FLAPPY_BIRD',
-    }
+    },
+    VOUCHER: 'VOUCHER',
+    LOCATION: 'LOCATION',
+    PROFILE: 'PROFILE',
   },
 };
 export default routes;
