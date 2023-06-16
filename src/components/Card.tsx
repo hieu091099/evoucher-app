@@ -14,13 +14,11 @@ export default function Card({
   if (children) {
     return <View style={styles.wrapCard}>{children}</View>;
   }
-  console.log('44444', )
-
   return (
     // <Text>{title}</Text>
     <TouchableOpacity style={styles.wrapCard} onPress={onPress}>
       <View style={styles.imageCard}>
-        <Image source={image} style={{width: '100%', height: '100%'}} />
+        <Image style={{width: '100%', height: '100%'}} />
       </View>
       <View style={styles.content}>
         <Text style={styles.textTitle}>{title}</Text>

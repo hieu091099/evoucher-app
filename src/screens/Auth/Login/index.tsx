@@ -1,5 +1,5 @@
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {Button, TextInput} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
@@ -7,28 +7,38 @@ import {useDispatch, useSelector} from 'react-redux';
 const loginImage = require('../../../assets/images/login.jpg');
 const googleImage = require('../../../assets/images/icon-google.png');
 const faceBookImage = require('../../../assets/images/icon-facebook.png');
-import {login} from '../../../redux/actions/authAction';
+import {loginRequest} from '../../../redux/actions/authAction';
 import colors from '../../../utils/color';
 import Loading from '../../../components/Loading';
+import {navigate} from '../../../navigations/services';
+import routes from '../../../utils/routes';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const {isLoggingIn, isLoggedIn} = useSelector(state => state.auth);
   const [formLogin, setFormLogin] = useState({
     username: '',
     password: '',
   });
   const handleLogin = () => {
-    const {username, password} = formLogin;
-    if (username === 'Admin' && password === 'Admin') {
-      dispatch(login(formLogin));
-    }
+    dispatch(loginRequest(formLogin));
   };
   const handleOnChangeText = (type: string) => (value: string) => {
     setFormLogin(prev => ({...prev, [type]: value}));
   };
+  const handleGoHomeScreen = useCallback(() => {
+    if (!isLoggingIn && isLoggedIn) {
+      navigate(routes.MAIN_STACK, {screen: routes.MAIN.HOME});
+    }
+  },[isLoggedIn, isLoggingIn]);
+
+  useEffect(() => {
+    handleGoHomeScreen();
+  }, [handleGoHomeScreen]);
 
   return (
     <>
+      {isLoggingIn && <Loading />}
       <View
         style={{
           padding: 16,

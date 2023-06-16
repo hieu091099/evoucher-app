@@ -6,6 +6,7 @@ import {Provider} from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import {PersistGate} from 'redux-persist/integration/react';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import colors from './src/utils/color';
 import {store, persistor} from './src/redux/store';
@@ -28,9 +29,11 @@ function App() {
     <Provider store={store}>
       <PersistGate loading={<Loading />} persistor={persistor}>
         <PaperProvider theme={theme}>
-          <NavigationContainer ref={navigationRef}>
-            <AppNavigatorWithAuth />
-          </NavigationContainer>
+          <SafeAreaProvider>
+            <NavigationContainer ref={navigationRef}>
+              <AppNavigatorWithAuth />
+            </NavigationContainer>
+          </SafeAreaProvider>
         </PaperProvider>
       </PersistGate>
     </Provider>

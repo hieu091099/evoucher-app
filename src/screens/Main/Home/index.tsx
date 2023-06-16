@@ -1,12 +1,11 @@
 import {TouchableOpacity, FlatList, View, Text, ScrollView} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import IconIon from 'react-native-vector-icons/Ionicons';
 import IconEntypo from 'react-native-vector-icons/Entypo';
-
+import {Searchbar} from 'react-native-paper';
 import routes from '../../../utils/routes';
 import {navigate} from '../../../navigations/services';
 import NotificationIcon from '../../../assets/images/notification.svg';
@@ -23,7 +22,7 @@ const ItemSeparator1 = () => {
   return <View style={{width: 23}} />;
 };
 
-const ItemCard = ({IconCT, text, nameIcon, onPress}) => {
+const ItemCard = ({IconCT, text, nameIcon, onPress}: any) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -111,10 +110,10 @@ export default function Home() {
       text: 'Shopping',
     },
   ]);
+  const user = useSelector(state => state.auth.account.user)
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const user = {
-    name: 'Admin',
-  };
+  const onChangeSearch = query => setSearchQuery(query);
 
   const openDrawer = () => {
     navigation.openDrawer();
@@ -133,7 +132,12 @@ export default function Home() {
 
   const renderItem1 = ({item}: any) => {
     return (
-      <ItemCard text={item.text} nameIcon={item.nameIcon} IconCT={item.icon} />
+      <ItemCard
+        onPress={() => setSelectedId1(item.id)}
+        text={item.text}
+        nameIcon={item.nameIcon}
+        IconCT={item.icon}
+      />
     );
   };
 

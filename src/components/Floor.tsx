@@ -1,30 +1,30 @@
 import Matter from 'matter-js';
 import React from 'react';
-import { View } from 'react-native';
+import { ImageBackground } from 'react-native';
 
 const Floor = (props) => {
   const widthBody = props.body.bounds.max.x - props.body.bounds.min.x;
   const heightBody = props.body.bounds.max.y - props.body.bounds.min.y;
 
   const xBody = props.body.position.x - widthBody / 2;
-  const yBody = props.body.position.y - heightBody;
+  const yBody = props.body.position.y - heightBody / 2;
 
   const color = props.color;
 
   return (
-    <View
+    <ImageBackground
       style={{
         position: 'absolute',
         left: xBody - 15,
         top: yBody,
         width: widthBody,
-        height: heightBody,
+        height: heightBody -40,
       }}
-    >
-      {/* Render any other components or content here */}
-      <View style={{ backgroundColor: 50, flex: 1 }} >
-      </View>
-    </View>
+      resizeMethod="resize"
+      resizeMode="cover"
+      source={require('../assets/ground.png')}
+    />
+     
   );
 };
 

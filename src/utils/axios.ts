@@ -2,9 +2,10 @@ import axios from 'axios';
 import {BACKEND_APP_API_URL} from '@env';
 
 const axiosInstance = axios.create({
-  baseURL: BACKEND_APP_API_URL || '',
+  baseURL: 'http://localhost:3001' || BACKEND_APP_API_URL,
   headers: {
     'Content-Type': 'application/json',
+    Accept: 'application/json',
   },
 });
 
@@ -20,36 +21,29 @@ export const axiosGet = async (url: string, config = {}) => {
   try {
     const response = await axiosInstance.get(url, config);
     return response.data;
-  } catch (error: any) {
-    throw new Error(error.response?.data?.message || 'Something went wrong');
-  }
+  } catch (error: any) {}
 };
 
 export const axiosPost = async (url: string, data: any, config = {}) => {
   try {
     const response = await axiosInstance.post(url, data, config);
+
     return response.data;
-  } catch (error: any) {
-    throw new Error(error.response?.data?.message || 'Something went wrong');
-  }
+  } catch (error: any) {}
 };
 
 export const axiosPut = async (url: string, data: any, config = {}) => {
   try {
     const response = await axiosInstance.put(url, data, config);
     return response.data;
-  } catch (error: any) {
-    throw new Error(error.response?.data?.message || 'Something went wrong');
-  }
+  } catch (error: any) {}
 };
 
 export const axiosDelete = async (url: string, config = {}) => {
   try {
     const response = await axiosInstance.delete(url, config);
     return response.data;
-  } catch (error: any) {
-    throw new Error(error.response?.data?.message || 'Something went wrong');
-  }
+  } catch (error: any) {}
 };
 
 export default axiosInstance;

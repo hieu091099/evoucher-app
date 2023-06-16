@@ -22,14 +22,13 @@ const authReducer = (state = initialState, action: any) => {
 
     case LOGIN.SUCCESS: {
       const result = action.payload;
-      setAuthToken(action.payload.token || '');
+      setAuthToken(action.payload?.token?.accessToken || '');
       return {
         ...state,
         isLoggedIn: true,
         isLoggingIn: false,
         account: {
-          accessToken: result?.accessToken,
-          refreshToken: result?.refreshToken,
+          accessToken: result?.token,
           user: {...result?.user},
         },
       };
