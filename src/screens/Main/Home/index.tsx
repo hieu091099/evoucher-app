@@ -23,7 +23,7 @@ const ItemSeparator1 = () => {
   return <View style={{width: 23}} />;
 };
 
-const ItemCard = ({IconCT, text, nameIcon, onPress}) => {
+const ItemCard = ({IconCT, text, nameIcon, onPress}: any) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -133,7 +133,12 @@ export default function Home() {
 
   const renderItem1 = ({item}: any) => {
     return (
-      <ItemCard text={item.text} nameIcon={item.nameIcon} IconCT={item.icon} />
+      <ItemCard
+        onPress={() => setSelectedId1(item.id)}
+        text={item.text}
+        nameIcon={item.nameIcon}
+        IconCT={item.icon}
+      />
     );
   };
 

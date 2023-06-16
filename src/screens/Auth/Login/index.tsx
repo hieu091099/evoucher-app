@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 const loginImage = require('../../../assets/images/login.jpg');
 const googleImage = require('../../../assets/images/icon-google.png');
 const faceBookImage = require('../../../assets/images/icon-facebook.png');
-import {login} from '../../../redux/actions/authAction';
+import {loginRequest} from '../../../redux/actions/authAction';
 import colors from '../../../utils/color';
 import Loading from '../../../components/Loading';
 
@@ -18,10 +18,7 @@ const Login = () => {
     password: '',
   });
   const handleLogin = () => {
-    const {username, password} = formLogin;
-    if (username === 'Admin' && password === 'Admin') {
-      dispatch(login(formLogin));
-    }
+      dispatch(loginRequest(formLogin));
   };
   const handleOnChangeText = (type: string) => (value: string) => {
     setFormLogin(prev => ({...prev, [type]: value}));

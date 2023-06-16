@@ -155,7 +155,7 @@ const MainStack = () => {
     <>
       <Stack.Navigator>
         <Stack.Screen
-          name={routes.MAIN.HOME}
+          name={routes.MAIN.DASHBOARD}
           component={MainDrawer}
           options={{headerShown: false}}
         />

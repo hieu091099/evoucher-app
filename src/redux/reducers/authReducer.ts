@@ -1,5 +1,7 @@
 import {LOGIN, LOGOUT} from '../actions/actionTypes';
 import {setAuthToken} from '../../utils/axios';
+import {navigate} from '../../navigations/services';
+import routes from '../../utils/routes';
 
 const initialState = {
   isLoggedIn: false,
@@ -23,13 +25,13 @@ const authReducer = (state = initialState, action: any) => {
     case LOGIN.SUCCESS: {
       const result = action.payload;
       setAuthToken(action.payload.token || '');
+      navigate(routes.MAIN_STACK);
       return {
         ...state,
         isLoggedIn: true,
         isLoggingIn: false,
         account: {
-          accessToken: result?.accessToken,
-          refreshToken: result?.refreshToken,
+          accessToken: result?.token,
           user: {...result?.user},
         },
       };
