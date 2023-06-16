@@ -10,15 +10,17 @@ const routes = {
   MAIN_STACK: 'MAIN_STACK',
   MAIN: {
     MAIN_DRAWER: 'MAIN_DRAWER',
-    DASHBOARD: 'DASHBOARD',
     MAIN: 'MAIN',
     HOME: 'HOME',
-    GAME: {
-      FLAPPY_BIRD: 'FLAPPY_BIRD',
-    },
     VOUCHER: 'VOUCHER',
     LOCATION: 'LOCATION',
     PROFILE: 'PROFILE',
+    GAME: {
+      FLAPPY_BIRD: 'FLAPPY_BIRD',
+      TOE_TIC: 'TOE_TIC',
+      SPIN: 'SPIN',
+      KEO_BUA_BAO: 'KEO_BUA_BAO',
+    },
   },
 };
 export default routes;

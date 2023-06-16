@@ -12,11 +12,12 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useDispatch} from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 import routes from '../../utils/routes';
 import {logout} from '../../redux/actions/authAction';
-
 import Home from '../../screens/Main/Home';
-import FlappyBirdClone from '../../screens/Game/FlappyBird';
+import FlappyBird from '../../screens/Main/Game/FlappyBird/FlappyBird';
+import ToeTic from '../../screens/Main/Game/ToeTic/Game';
 import Voucher from '../../screens/Main/Voucher';
 import Location from '../../screens/Main/Location';
 import Profile from '../../screens/Main/Profile';
@@ -100,6 +101,16 @@ export const MainDrawer = () => {
         component={MainTab}
         options={{headerShown: false}}
       />
+      <Drawer.Screen
+        name={routes.MAIN.GAME.FLAPPY_BIRD}
+        component={FlappyBird}
+        options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name={routes.MAIN.GAME.TOE_TIC}
+        component={ToeTic}
+        options={{headerShown: false}}
+      />
     </Drawer.Navigator>
   );
 };
@@ -155,13 +166,18 @@ const MainStack = () => {
     <>
       <Stack.Navigator>
         <Stack.Screen
-          name={routes.MAIN.DASHBOARD}
+          name={routes.MAIN.HOME}
           component={MainDrawer}
           options={{headerShown: false}}
         />
         <Stack.Screen
           name={routes.MAIN.GAME.FLAPPY_BIRD}
-          component={FlappyBirdClone}
+          component={FlappyBird}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={routes.MAIN.GAME.TOE_TIC}
+          component={ToeTic}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

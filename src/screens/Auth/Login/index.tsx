@@ -28,7 +28,7 @@ const Login = () => {
   };
   const handleGoHomeScreen = useCallback(() => {
     if (!isLoggingIn && isLoggedIn) {
-      navigate(routes.MAIN.DASHBOARD);
+      navigate(routes.MAIN_STACK, {screen: routes.MAIN.HOME});
     }
   },[isLoggedIn, isLoggingIn]);
 
