@@ -10,7 +10,6 @@ const Obstacle2 = props => {
   const yBody = props.body.position.y - heightBody / 2;
 
   const color = props.color;
-  console.log(props);
 
   return (
     <View

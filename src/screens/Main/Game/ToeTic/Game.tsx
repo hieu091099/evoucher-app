@@ -47,11 +47,11 @@ const Game: React.FC<GameProps> = ({navigation}) => {
   const handleResetGame = React.useCallback(() => {
     goBack();
   }, []);
-  console.log(gameState);
+
   React.useEffect(() => {
     if (playerType == 'O') {
       const index = minimax(gameState, 0, true);
-      console.log(index);
+
       setGameState((currentGameState: GameStateType[]) => {
         return currentGameState.map((item, boardIndex) => {
           if (typeof item === 'string') {
@@ -207,7 +207,6 @@ const Game: React.FC<GameProps> = ({navigation}) => {
       <StyledGameContainer>
         <StyledGameContent>
           {gameState.map((item: GameStateType, index: number) => {
-            console.log(playerType);
             return (
               <Board
                 key={index.toString()}

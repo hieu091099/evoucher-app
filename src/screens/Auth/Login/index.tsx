@@ -21,7 +21,6 @@ const Login = () => {
     password: '',
   });
   const handleLogin = () => {
-    console.log('first');
     dispatch(loginRequest(formLogin));
   };
   const handleOnChangeText = (type: string) => (value: string) => {
@@ -65,6 +64,7 @@ const Login = () => {
         />
         <TextInput
           mode="outlined"
+          secureTextEntry={true}
           label="Password"
           placeholder="Type password"
           right={<Icon name="user" size={30} color="#900" />}

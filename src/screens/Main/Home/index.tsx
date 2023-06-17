@@ -110,7 +110,7 @@ export default function Home() {
       text: 'Shopping',
     },
   ]);
-  const user = useSelector(state => state.auth.account.user)
+  const user = useSelector(state => state.auth.account.user);
   const [searchQuery, setSearchQuery] = useState('');
 
   const onChangeSearch = query => setSearchQuery(query);

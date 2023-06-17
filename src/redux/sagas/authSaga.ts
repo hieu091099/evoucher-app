@@ -8,7 +8,6 @@ const calllogin = async (payload: {username: string; password: string}) => {
     username: payload.username,
     password: payload.password,
   });
-  console.log('4444');
 
   return response.data;
 };
