@@ -21,6 +21,7 @@ const Login = () => {
     password: '',
   });
   const handleLogin = () => {
+    console.log('first');
     dispatch(loginRequest(formLogin));
   };
   const handleOnChangeText = (type: string) => (value: string) => {
@@ -30,7 +31,7 @@ const Login = () => {
     if (!isLoggingIn && isLoggedIn) {
       navigate(routes.MAIN_STACK, {screen: routes.MAIN.HOME});
     }
-  },[isLoggedIn, isLoggingIn]);
+  }, [isLoggedIn, isLoggingIn]);
 
   useEffect(() => {
     handleGoHomeScreen();

@@ -32,7 +32,7 @@ export default function FlappyBird() {
               fontSize: 40,
               fontWeight: 'bold',
               margin: 20,
-              zIndex: 150
+              zIndex: 150,
             }}>
             {currentPoints}
           </Text>

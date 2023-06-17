@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { StyledBoardContainer, StyledBoardTitle } from './Game.styled';
-import { BoardProps } from './Game.types';
+import {StyledBoardContainer, StyledBoardTitle} from './Game.styled';
+import {BoardProps} from './Game.types';
 
 const Board: React.FC<BoardProps> = ({
   type,
@@ -14,14 +14,12 @@ const Board: React.FC<BoardProps> = ({
       {...props}
       type={type}
       isWinner={isWinner}
-      isFinished={isFinished}
-    >
+      isFinished={isFinished}>
       <StyledBoardTitle
         isFinished={isFinished}
         type={type}
         isWinner={isWinner}
-        font="Black"
-      >
+        font="Black">
         {type}
       </StyledBoardTitle>
     </StyledBoardContainer>

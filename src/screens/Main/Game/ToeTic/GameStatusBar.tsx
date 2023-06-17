@@ -1,17 +1,17 @@
 import * as React from 'react';
-import { useTheme } from 'styled-components/native';
+import {useTheme} from 'styled-components/native';
 
-import { StatusText } from '../../../../components';
+import {StatusText} from '../../../../components';
 
-import { StyledGameStatusBarContainer } from './Game.styled';
-import { GameStatusBarProps } from './Game.types';
+import {StyledGameStatusBarContainer} from './Game.styled';
+import {GameStatusBarProps} from './Game.types';
 
 const GameStatusBar: React.FC<GameStatusBarProps> = ({
   status,
   currentPlayer,
   ...props
 }) => {
-  const { colors } = useTheme();
+  const {colors} = useTheme();
 
   return (
     <StyledGameStatusBarContainer {...props}>
