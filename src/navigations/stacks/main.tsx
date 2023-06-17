@@ -21,11 +21,11 @@ import ToeTic from '../../screens/Main/Game/ToeTic/Game';
 import Voucher from '../../screens/Main/Voucher';
 import Location from '../../screens/Main/Location';
 import Profile from '../../screens/Main/Profile';
-import RockPaperStack from './RockPaper';
 import Menu from '../../screens/Main/Game/RockPaper/Menu';
 import Options from '../../screens/Main/Game/RockPaper/Options';
 import Play from '../../screens/Main/Game/RockPaper/Play';
 import DetailVoucher from '../../screens/Main/Voucher/DetailVoucher';
+import SpinAndWin from '../../screens/Main/Game/SpinAndWin/SpinAndWin';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -119,6 +119,11 @@ export const MainDrawer = () => {
       <Drawer.Screen
         name={'Menu'}
         component={Menu}
+        options={{headerShown: false}}
+      />
+       <Drawer.Screen
+        name={'Spin'}
+        component={SpinAndWin}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>
