@@ -1,8 +1,9 @@
-import {TouchableOpacity, FlatList, View, Text, ScrollView} from 'react-native';
+import {TouchableOpacity, FlatList, View, Text, ScrollView ,TouchableWithoutFeedback} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import IconOcticons from 'react-native-vector-icons/Octicons';
 import IconIon from 'react-native-vector-icons/Ionicons';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import {Searchbar} from 'react-native-paper';
@@ -24,17 +25,17 @@ const ItemSeparator1 = () => {
 
 const ItemCard = ({IconCT, text, nameIcon, onPress}: any) => {
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
-        flexDirection: 'column',
-        width: 49,
-        height: 54,
-        alignContent: 'center',
-        justifyContent: 'center',
-      }}>
-      <IconCT style={{paddingLeft: 6}} name={nameIcon} size={26} color="#000" />
-      <Text numberOfLines={1}>{text}</Text>
+    <TouchableOpacity onPress={onPress}>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <IconCT name={nameIcon} size={26} color="#000" />
+        <Text numberOfLines={1}>{text}</Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -88,29 +89,27 @@ export default function Home() {
     {
       id: 3,
       icon: IconIon,
-      nameIcon: 'musical-notes-outline',
-      text: 'Music',
+      nameIcon: 'ios-flower-outline',
+      text: 'Beauti',
     },
     {
       id: 4,
       icon: IconIon,
-      nameIcon: 'restaurant-outline',
-      text: 'Restaurant',
+      nameIcon: 'desktop-outline',
+      text: 'Cinema',
     },
     {
       id: 5,
-      icon: Icon,
-      nameIcon: 'car',
-      text: 'Car',
-    },
-    {
-      id: 6,
-      icon: Icon,
-      nameIcon: 'shoppingcart',
-      text: 'Shopping',
+      icon: IconOcticons,
+      nameIcon: 'beaker',
+      text: 'Pharma',
     },
   ]);
+<<<<<<< Updated upstream
   const user = useSelector(state => state.auth);
+=======
+  const user = useSelector(state => state.auth.account.user);
+>>>>>>> Stashed changes
   const [searchQuery, setSearchQuery] = useState('');
   const onChangeSearch = query => setSearchQuery(query);
   const openDrawer = () => {
@@ -137,7 +136,7 @@ export default function Home() {
       />
     );
   };
-
+  console.log('4444', user)
   return (
     <Header isGradientBar>
       <View style={styles.dashboard}>
@@ -157,8 +156,9 @@ export default function Home() {
             <NotificationIcon />
           </View>
           <View style={styles.token}>
-            <Text style={styles.tokenText}>Available Tokens</Text>
-            <Text style={styles.tokenTotal}>$121321.321321</Text>
+            <View style={{marginTop: 8}}>
+              <Searchbar />
+            </View>
           </View>
         </View>
         <View style={styles.body}>
@@ -167,9 +167,9 @@ export default function Home() {
               data={groups}
               contentContainerStyle={{
                 flexDirection: 'row',
-                padding: 0,
                 alignItems: 'center',
                 justifyContent: 'center',
+                flex: 1,
               }}
               renderItem={renderItem1}
               keyExtractor={item => item.id}

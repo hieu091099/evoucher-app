@@ -17,7 +17,7 @@ export default function Location() {
   const navigation = useNavigation();
 
   return (
-    <Header>
+    <Header isGradientBar>
       <Text>location</Text>
     </Header>
   );

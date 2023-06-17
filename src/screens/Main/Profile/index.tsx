@@ -17,7 +17,7 @@ export default function Profile() {
   const navigation = useNavigation();
 
   return (
-    <Header>
+    <Header isGradientBar>
       <Text>profile</Text>
     </Header>
   );

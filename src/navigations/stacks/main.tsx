@@ -25,6 +25,7 @@ import RockPaperStack from './RockPaper';
 import Menu from '../../screens/Main/Game/RockPaper/Menu';
 import Options from '../../screens/Main/Game/RockPaper/Options';
 import Play from '../../screens/Main/Game/RockPaper/Play';
+import DetailVoucher from '../../screens/Main/Voucher/DetailVoucher';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -197,6 +198,11 @@ const MainStack = () => {
         <Stack.Screen
           name={'Play'}
           component={Play}
+          options={{headerShown: false}}
+        />
+         <Stack.Screen
+          name={'DetailVoucher'}
+          component={DetailVoucher}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
