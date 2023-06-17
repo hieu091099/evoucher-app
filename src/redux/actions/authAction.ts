@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from './actionTypes';
+import {LOGIN, LOGOUT, SIGN_UP} from './actionTypes';
 
 export const loginRequest = (payload: object) => {
   return {
@@ -21,10 +21,29 @@ export const loginFail = (payload: object) => {
   };
 };
 
+export const registerRequest = (payload: object) => {
+  return {
+    type: SIGN_UP.REQUEST,
+    payload,
+  };
+};
+
+export const registerSuccess = (payload: object) => {
+  return {
+    type: SIGN_UP.SUCCESS,
+    payload,
+  };
+};
+
+export const registerFail = (payload: object) => {
+  return {
+    type: SIGN_UP.FAIL,
+    payload,
+  };
+};
 
 export const logout = () => {
   return {
     type: LOGOUT,
   };
 };
-

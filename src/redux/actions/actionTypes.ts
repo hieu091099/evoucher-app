@@ -10,6 +10,7 @@ export const createRequestTypes = (base: any) => ({
 
 export const LOGOUT = 'LOGOUT';
 export const LOGIN = createRequestTypes('LOGIN');
+export const SIGN_UP = createRequestTypes('SIGN_UP');
 
 export const SET_BIRD = 'SET_BIRD';
 export const ToggleCaps = 'toggleCaps';
@@ -22,7 +23,7 @@ export const SetGreen = 'setGreen';
 export const SetBlue = 'setBlue';
 export const SetPurple = 'setPurple';
 
-export const ToggleHelper = 'ToggleHelper'
+export const ToggleHelper = 'ToggleHelper';
 export const SetUsername = 'SetUsername';
 export const SetCompPlay = 'SetCompPlay';
 export const SetUserPlay = 'SetUserPlay';

@@ -4,7 +4,7 @@ import {Button, TextInput} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
 
-const loginImage = require('../../../assets/images/login.jpg');
+const loginImage = require('../../../assets/images/login.png');
 const googleImage = require('../../../assets/images/icon-google.png');
 const faceBookImage = require('../../../assets/images/icon-facebook.png');
 import {loginRequest} from '../../../redux/actions/authAction';
@@ -58,6 +58,7 @@ const Login = () => {
           mode="outlined"
           label="Username"
           placeholder="Type username"
+          autoCapitalize="none"
           right={<Icon name="user" size={30} color="#900" />}
           style={{marginBottom: 10}}
           onChangeText={handleOnChangeText('username')}
@@ -66,6 +67,7 @@ const Login = () => {
           mode="outlined"
           secureTextEntry={true}
           label="Password"
+          autoCapitalize="none"
           placeholder="Type password"
           right={<Icon name="user" size={30} color="#900" />}
           onChangeText={handleOnChangeText('password')}
@@ -91,17 +93,22 @@ const Login = () => {
           Or
         </Text>
 
-        <Text
-          style={{
-            textAlign: 'center',
-            fontWeight: 700,
-            fontSize: 16,
-            marginBottom: 16,
-            marginTop: 5,
-            color: colors.blueA400,
-          }}>
-          Sign Up!
-        </Text>
+        <TouchableOpacity
+          onPress={() =>
+            navigate(routes.AUTH_STACK, {screen: routes.AUTH.SIGN_UP})
+          }>
+          <Text
+            style={{
+              textAlign: 'center',
+              fontWeight: 700,
+              fontSize: 16,
+              marginBottom: 16,
+              marginTop: 5,
+              color: colors.blueA400,
+            }}>
+            Sign Up!
+          </Text>
+        </TouchableOpacity>
         <View style={{borderTopWidth: 1, marginBottom: 20}}></View>
         <View style={{flexDirection: 'row', justifyContent: 'center', gap: 10}}>
           <TouchableOpacity

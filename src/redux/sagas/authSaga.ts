@@ -1,3 +1,5 @@
+import {registerSuccess, registerFail} from './../actions/authAction';
+import {SIGN_UP} from './../actions/actionTypes';
 import {takeEvery, put, call} from 'redux-saga/effects';
 import {LOGIN} from '../actions/actionTypes';
 import axios from '../../utils/axios';
@@ -7,6 +9,20 @@ const calllogin = async (payload: {username: string; password: string}) => {
   const response = await axios.post(API.AUTH.LOGIN, {
     username: payload.username,
     password: payload.password,
+  });
+
+  return response.data;
+};
+
+const callregister = async (payload: {
+  username: string;
+  password: string;
+  email: string;
+  phone: string;
+  name: string;
+}) => {
+  const response = await axios.post(API.AUTH.REGISTER, {
+    ...payload,
   });
 
   return response.data;
@@ -25,8 +41,21 @@ function* handleLogin(action: any): Generator<any, any, any> {
   }
 }
 
+function* handleRegister(action: any): Generator<any, any, any> {
+  try {
+    const response: {token: string; authentication: boolean; user: object} =
+      yield call(callregister, action.payload);
+    if (response?.authentication) {
+      yield put(registerSuccess(response));
+    }
+  } catch (error: any) {
+    yield put(registerFail(error.message));
+  }
+}
+
 function* authSaga() {
   yield takeEvery(LOGIN.REQUEST, handleLogin);
+  yield takeEvery(SIGN_UP.REQUEST, handleRegister);
 }
 
 export default authSaga;
