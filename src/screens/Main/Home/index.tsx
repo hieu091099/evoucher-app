@@ -105,11 +105,7 @@ export default function Home() {
       text: 'Pharma',
     },
   ]);
-<<<<<<< Updated upstream
-  const user = useSelector(state => state.auth);
-=======
   const user = useSelector(state => state.auth.account.user);
->>>>>>> Stashed changes
   const [searchQuery, setSearchQuery] = useState('');
   const onChangeSearch = query => setSearchQuery(query);
   const openDrawer = () => {

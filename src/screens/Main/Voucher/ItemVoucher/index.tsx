@@ -102,6 +102,22 @@ export default function ItemVoucher({
           zIndex: 20,
         }}
       />
+      <LinearGradient
+        colors={[colors.blue800, colors.blue800]}
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}}
+        locations={[1, 0]}
+        style={{
+          position: 'absolute',
+          width: 32,
+          height: 32,
+          borderRadius: 80,
+          backgroundColor: 'red',
+          left: -15,
+          top: '40%',
+          zIndex: 20,
+        }}
+      />
     </TouchableOpacity>
   );
 }
