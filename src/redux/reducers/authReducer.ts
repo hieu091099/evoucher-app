@@ -22,7 +22,6 @@ const authReducer = (state = initialState, action: any) => {
 
     case LOGIN.SUCCESS: {
       const result = action.payload;
-      console.log('444', result)
       setAuthToken(result?.token?.accessToken || '');
       return {
         ...state,
