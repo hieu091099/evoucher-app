@@ -21,6 +21,10 @@ import ToeTic from '../../screens/Main/Game/ToeTic/Game';
 import Voucher from '../../screens/Main/Voucher';
 import Location from '../../screens/Main/Location';
 import Profile from '../../screens/Main/Profile';
+import RockPaperStack from './RockPaper';
+import Menu from '../../screens/Main/Game/RockPaper/Menu';
+import Options from '../../screens/Main/Game/RockPaper/Options';
+import Play from '../../screens/Main/Game/RockPaper/Play';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -111,6 +115,11 @@ export const MainDrawer = () => {
         component={ToeTic}
         options={{headerShown: false}}
       />
+      <Drawer.Screen
+        name={'Menu'}
+        component={Menu}
+        options={{headerShown: false}}
+      />
     </Drawer.Navigator>
   );
 };
@@ -178,6 +187,16 @@ const MainStack = () => {
         <Stack.Screen
           name={routes.MAIN.GAME.TOE_TIC}
           component={ToeTic}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={'Options'}
+          component={Options}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={'Play'}
+          component={Play}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

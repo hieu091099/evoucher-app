@@ -18,20 +18,10 @@ function* handleLogin(action: any): Generator<any, any, any> {
       yield call(calllogin, action.payload);
 
     if (response?.authentication) {
-      yield put(
-        loginSuccess({
-          type: LOGIN.SUCCESS,
-          payload: response.data,
-        }),
-      );
+      yield put(loginSuccess(response));
     }
   } catch (error: any) {
-    yield put(
-      loginFail({
-        type: LOGIN.FAIL,
-        payload: error.message,
-      }),
-    );
+    yield put(loginFail(error.message));
   }
 }
 
