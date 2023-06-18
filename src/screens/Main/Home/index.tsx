@@ -107,12 +107,14 @@ export default function Home() {
     setSelectedId1(item.id);
     navigate('Campaign', {
       typeCampaign: item.text,
+      campaigns: campaigns,
     });
   };
 
   const handleClickSeeAll = item => {
     navigate('Campaign', {
       campaigns: campaigns,
+      isSeeAll: true,
     });
   };
 

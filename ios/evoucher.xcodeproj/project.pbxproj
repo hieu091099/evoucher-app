@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* evoucherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* evoucherTests.m */; };
-		0FC90EEF08E5821C33124C4D /* libPods-evoucher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B7A48D3E2B59D9B4BEDF22 /* libPods-evoucher.a */; };
+		05FE67545AB41381520727E4 /* libPods-evoucher-evoucherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6762524DBD92E724CA0A15BB /* libPods-evoucher-evoucherTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -28,10 +28,10 @@
 		36749BB42A13D1BA00356F0C /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36749BA42A13D1BA00356F0C /* EvilIcons.ttf */; };
 		36749BB52A13D1BA00356F0C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36749BA52A13D1BA00356F0C /* SimpleLineIcons.ttf */; };
 		36749BB62A13D1BA00356F0C /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36749BA62A13D1BA00356F0C /* MaterialIcons.ttf */; };
-		5F5CDD1188A6C2A3BD89822D /* libPods-evoucher-evoucherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A03038474A0E50FC7D6985 /* libPods-evoucher-evoucherTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A94148AAA7F94F5B984F96E3 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A46D45CAD4B446C68C2C941E /* Montserrat-Regular.ttf */; };
 		AAF376C0E2304712A3B40A2E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F64519E11774173BD6F02E2 /* Montserrat-Medium.ttf */; };
+		BD5E6D079B2F81B4D0BC0B17 /* libPods-evoucher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9175B717605E131CCC4813C1 /* libPods-evoucher.a */; };
 		C63264F382EA4B05A0E2D4D6 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 974F7569A0AA41088FF8C091 /* Montserrat-Black.ttf */; };
 		EB6A199ED01D403998BB4086 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83ED5FF2EBDC4E6C8A1D3A7E /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
@@ -50,14 +50,13 @@
 		00E356EE1AD99517003FC87E /* evoucherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = evoucherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* evoucherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = evoucherTests.m; sourceTree = "<group>"; };
-		10EB1080B204AE910860190D /* Pods-evoucher-evoucherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-evoucher-evoucherTests.release.xcconfig"; path = "Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* evoucher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = evoucher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = evoucher/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = evoucher/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = evoucher/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = evoucher/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = evoucher/main.m; sourceTree = "<group>"; };
-		2D93155EA5932579B2F13DFD /* Pods-evoucher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-evoucher.debug.xcconfig"; path = "Target Support Files/Pods-evoucher/Pods-evoucher.debug.xcconfig"; sourceTree = "<group>"; };
+		315C12C7B971C9BE7E6ABFAD /* Pods-evoucher-evoucherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-evoucher-evoucherTests.release.xcconfig"; path = "Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests.release.xcconfig"; sourceTree = "<group>"; };
 		36749B972A13D1BA00356F0C /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		36749B982A13D1BA00356F0C /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		36749B992A13D1BA00356F0C /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -74,15 +73,16 @@
 		36749BA42A13D1BA00356F0C /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		36749BA52A13D1BA00356F0C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		36749BA62A13D1BA00356F0C /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		4E80D4D6A260D06D6C7AFCA6 /* Pods-evoucher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-evoucher.debug.xcconfig"; path = "Target Support Files/Pods-evoucher/Pods-evoucher.debug.xcconfig"; sourceTree = "<group>"; };
 		4F64519E11774173BD6F02E2 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
-		67A03038474A0E50FC7D6985 /* libPods-evoucher-evoucherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-evoucher-evoucherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		783A9C3225896016E9620141 /* Pods-evoucher-evoucherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-evoucher-evoucherTests.debug.xcconfig"; path = "Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6762524DBD92E724CA0A15BB /* libPods-evoucher-evoucherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-evoucher-evoucherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = evoucher/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83ED5FF2EBDC4E6C8A1D3A7E /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		85B7A48D3E2B59D9B4BEDF22 /* libPods-evoucher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-evoucher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9175B717605E131CCC4813C1 /* libPods-evoucher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-evoucher.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		974F7569A0AA41088FF8C091 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Black.ttf"; path = "../src/assets/fonts/Montserrat-Black.ttf"; sourceTree = "<group>"; };
-		A167AAC25C49AEBD453CBDA0 /* Pods-evoucher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-evoucher.release.xcconfig"; path = "Target Support Files/Pods-evoucher/Pods-evoucher.release.xcconfig"; sourceTree = "<group>"; };
 		A46D45CAD4B446C68C2C941E /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		D6CAFD95245E314A3340DC8E /* Pods-evoucher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-evoucher.release.xcconfig"; path = "Target Support Files/Pods-evoucher/Pods-evoucher.release.xcconfig"; sourceTree = "<group>"; };
+		D7996CD0A6493685EFE121FE /* Pods-evoucher-evoucherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-evoucher-evoucherTests.debug.xcconfig"; path = "Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F5CDD1188A6C2A3BD89822D /* libPods-evoucher-evoucherTests.a in Frameworks */,
+				05FE67545AB41381520727E4 /* libPods-evoucher-evoucherTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FC90EEF08E5821C33124C4D /* libPods-evoucher.a in Frameworks */,
+				BD5E6D079B2F81B4D0BC0B17 /* libPods-evoucher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				85B7A48D3E2B59D9B4BEDF22 /* libPods-evoucher.a */,
-				67A03038474A0E50FC7D6985 /* libPods-evoucher-evoucherTests.a */,
+				9175B717605E131CCC4813C1 /* libPods-evoucher.a */,
+				6762524DBD92E724CA0A15BB /* libPods-evoucher-evoucherTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,10 +218,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2D93155EA5932579B2F13DFD /* Pods-evoucher.debug.xcconfig */,
-				A167AAC25C49AEBD453CBDA0 /* Pods-evoucher.release.xcconfig */,
-				783A9C3225896016E9620141 /* Pods-evoucher-evoucherTests.debug.xcconfig */,
-				10EB1080B204AE910860190D /* Pods-evoucher-evoucherTests.release.xcconfig */,
+				4E80D4D6A260D06D6C7AFCA6 /* Pods-evoucher.debug.xcconfig */,
+				D6CAFD95245E314A3340DC8E /* Pods-evoucher.release.xcconfig */,
+				D7996CD0A6493685EFE121FE /* Pods-evoucher-evoucherTests.debug.xcconfig */,
+				315C12C7B971C9BE7E6ABFAD /* Pods-evoucher-evoucherTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -233,12 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "evoucherTests" */;
 			buildPhases = (
-				35163FA77D958269800A1DFA /* [CP] Check Pods Manifest.lock */,
+				6DBAC9E6CD12C9AC071AA5CF /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				0BB951BF5DF6D552A4BB9E4B /* [CP] Embed Pods Frameworks */,
-				59CDC33D0173058333A2FA95 /* [CP] Copy Pods Resources */,
+				920E4EDD5526F6938277A5AC /* [CP] Embed Pods Frameworks */,
+				79FE5DE1627DD60CBD1C16B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,14 +254,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "evoucher" */;
 			buildPhases = (
-				BD66614D32212E8A0A5641DE /* [CP] Check Pods Manifest.lock */,
+				76C2750217DCB481A8E2F136 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				A0F7A3762E9815494203B134 /* [CP] Embed Pods Frameworks */,
-				F7674276D453EE87BD313668 /* [CP] Copy Pods Resources */,
+				B1C8C6E1FFAF35B2041B893B /* [CP] Embed Pods Frameworks */,
+				CD873245A8AC4DB9FFDEC2FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,24 +364,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0BB951BF5DF6D552A4BB9E4B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		35163FA77D958269800A1DFA /* [CP] Check Pods Manifest.lock */ = {
+		6DBAC9E6CD12C9AC071AA5CF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,41 +386,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		59CDC33D0173058333A2FA95 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A0F7A3762E9815494203B134 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-evoucher/Pods-evoucher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-evoucher/Pods-evoucher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-evoucher/Pods-evoucher-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD66614D32212E8A0A5641DE /* [CP] Check Pods Manifest.lock */ = {
+		76C2750217DCB481A8E2F136 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,7 +408,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7674276D453EE87BD313668 /* [CP] Copy Pods Resources */ = {
+		79FE5DE1627DD60CBD1C16B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		920E4EDD5526F6938277A5AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-evoucher-evoucherTests/Pods-evoucher-evoucherTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1C8C6E1FFAF35B2041B893B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-evoucher/Pods-evoucher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-evoucher/Pods-evoucher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-evoucher/Pods-evoucher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD873245A8AC4DB9FFDEC2FB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -528,7 +528,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 783A9C3225896016E9620141 /* Pods-evoucher-evoucherTests.debug.xcconfig */;
+			baseConfigurationReference = D7996CD0A6493685EFE121FE /* Pods-evoucher-evoucherTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -555,7 +555,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10EB1080B204AE910860190D /* Pods-evoucher-evoucherTests.release.xcconfig */;
+			baseConfigurationReference = 315C12C7B971C9BE7E6ABFAD /* Pods-evoucher-evoucherTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -579,7 +579,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D93155EA5932579B2F13DFD /* Pods-evoucher.debug.xcconfig */;
+			baseConfigurationReference = 4E80D4D6A260D06D6C7AFCA6 /* Pods-evoucher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -606,7 +606,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A167AAC25C49AEBD453CBDA0 /* Pods-evoucher.release.xcconfig */;
+			baseConfigurationReference = D6CAFD95245E314A3340DC8E /* Pods-evoucher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

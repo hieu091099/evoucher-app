@@ -6,11 +6,13 @@ import moment from 'moment';
 import colors from '../../../../utils/color';
 
 export default function ItemVoucher({
-  logo = <McLogo />,
+  logo = <McLogo style={{marginRight: 8}} />,
   title = 10,
   branch = 'McDonalds',
   endDate = moment().format('DD MMMM YYYY'),
   onPress = () => {},
+  amount = '',
+  isDetail = false,
 }) {
   return (
     <TouchableOpacity
@@ -48,7 +50,7 @@ export default function ItemVoucher({
               fontWeight: '600',
               lineHeight: 24,
             }}>
-            {`$ ${title}`}
+            {`% ${title}`}
           </Text>
 
           <Text
@@ -58,7 +60,7 @@ export default function ItemVoucher({
               fontWeight: '500',
               lineHeight: 19.5,
             }}>
-            {branch}
+            {amount}
           </Text>
         </View>
 
@@ -85,39 +87,42 @@ export default function ItemVoucher({
           }}
         />
       </View>
-
-      <LinearGradient
-        colors={[colors.blue800, colors.blue800]}
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        locations={[1, 0]}
-        style={{
-          position: 'absolute',
-          width: 32,
-          height: 32,
-          borderRadius: 80,
-          backgroundColor: 'red',
-          right: -15,
-          top: '40%',
-          zIndex: 20,
-        }}
-      />
-      <LinearGradient
-        colors={[colors.blue800, colors.blue800]}
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        locations={[1, 0]}
-        style={{
-          position: 'absolute',
-          width: 32,
-          height: 32,
-          borderRadius: 80,
-          backgroundColor: 'red',
-          left: -15,
-          top: '40%',
-          zIndex: 20,
-        }}
-      />
+      {isDetail ? null : (
+        <>
+          <LinearGradient
+            colors={[colors.blue800, colors.blue800]}
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            locations={[1, 0]}
+            style={{
+              position: 'absolute',
+              width: 32,
+              height: 32,
+              borderRadius: 80,
+              backgroundColor: 'red',
+              right: -15,
+              top: '40%',
+              zIndex: 20,
+            }}
+          />
+          <LinearGradient
+            colors={[colors.blue800, colors.blue800]}
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            locations={[1, 0]}
+            style={{
+              position: 'absolute',
+              width: 32,
+              height: 32,
+              borderRadius: 80,
+              backgroundColor: 'red',
+              left: -15,
+              top: '40%',
+              zIndex: 20,
+            }}
+          />
+        </>
+      )}
     </TouchableOpacity>
   );
 }

@@ -56,12 +56,15 @@ const ItemCard = ({IconCT, text, nameIcon, onPress, activeTab}: any) => {
 
 export default function Campain() {
   const route = useRoute();
-  const {typeCampaign, campaigns} =
-    route.params.length !== 0 ? route.params : {};
+  const {
+    typeCampaign = '',
+    campaigns = [],
+    isSeeAll = false,
+  }: any = route.params;
   const [searchData, setSearchData] = useState('');
   const [selectedId1, setSelectedId1] = useState('');
   const [selectedId, setSelectedId] = useState('');
-  const [campaignss, setCampaignss] = useState([]);
+  const [campaignss, setCampaignss] = useState([...campaigns]);
   const [activeTab, setActiveTab] = useState(typeCampaign || '');
 
   const [groups, setGroups] = useState([
@@ -123,10 +126,13 @@ export default function Campain() {
       return campaignss.filter(item => item.type === activeTab);
     }
     return campaignss;
-  }, [activeTab, campaigns]);
+  }, [activeTab, campaignss]);
 
   const finalDataGroupCampaign = useMemo(() => {
     if ([null, '', undefined].includes(activeTab)) {
+      if (isSeeAll) {
+        return campaignss;
+      }
       if (!searchData.length) {
         return campaignss;
       }
@@ -140,7 +146,7 @@ export default function Campain() {
     return filterGroupCampaign.filter(campaign =>
       campaign.name.toLowerCase().includes(searchData.toLowerCase()),
     );
-  }, [activeTab, campaigns, filterGroupCampaign, searchData]);
+  }, [activeTab, campaignss, filterGroupCampaign, isSeeAll, searchData]);
 
   const renderItem1 = ({item}: any) => {
     return (

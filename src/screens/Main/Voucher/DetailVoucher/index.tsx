@@ -7,12 +7,17 @@ import colors from '../../../../utils/color';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {goBack} from '../../../../navigations/services';
 import Header from '../../../../components/Header';
+import {useRoute} from '@react-navigation/native';
+
 export default function DetailVoucher({
   logo = <McLogo />,
   title = 10,
   branch = 'McDonalds',
   endDate = moment().format('DD MMMM YYYY'),
+
 }) {
+  const route = useRoute()
+  const {itemVoucher} = route.params
   return (
     <Header isGradientBar colorStart={colors.blue800} colorEnd={colors.blue800}>
       <View style={{flex: 1, padding: 16, alignItems: 'center'}}>
