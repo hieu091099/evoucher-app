@@ -26,6 +26,7 @@ import Options from '../../screens/Main/Game/RockPaper/Options';
 import Play from '../../screens/Main/Game/RockPaper/Play';
 import DetailVoucher from '../../screens/Main/Voucher/DetailVoucher';
 import SpinAndWin from '../../screens/Main/Game/SpinAndWin/SpinAndWin';
+import Campain from '../../screens/Main/Campain';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -121,7 +122,7 @@ export const MainDrawer = () => {
         component={Menu}
         options={{headerShown: false}}
       />
-       <Drawer.Screen
+      <Drawer.Screen
         name={'Spin'}
         component={SpinAndWin}
         options={{headerShown: false}}
@@ -205,9 +206,14 @@ const MainStack = () => {
           component={Play}
           options={{headerShown: false}}
         />
-         <Stack.Screen
+        <Stack.Screen
           name={'DetailVoucher'}
           component={DetailVoucher}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={'Campaign'}
+          component={Campain}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

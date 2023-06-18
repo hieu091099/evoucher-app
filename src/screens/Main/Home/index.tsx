@@ -1,4 +1,11 @@
-import {TouchableOpacity, FlatList, View, Text, ScrollView ,TouchableWithoutFeedback} from 'react-native';
+import {
+  TouchableOpacity,
+  FlatList,
+  View,
+  Text,
+  ScrollView,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
@@ -12,8 +19,9 @@ import {navigate} from '../../../navigations/services';
 import NotificationIcon from '../../../assets/images/notification.svg';
 import Header from '../../../components/Header';
 import Card from '../../../components/Card';
-
+import {axiosGet} from '../../../utils/axios';
 import styles from './styles';
+import API from '../../../utils/api';
 
 const ItemSeparator = () => {
   return <View style={{width: 20}} />;
@@ -46,32 +54,7 @@ export default function Home() {
   const [menuIcon, setMenuIcon] = useState(false);
   const [selectedId, setSelectedId] = useState();
   const [selectedId1, setSelectedId1] = useState();
-  const [campaigns, setCampaigns] = useState([
-    {
-      id: 1,
-      title: 'chien dich 1',
-      content: 'seco nhieu khuyen mai voucher123123123123123123123123123123',
-      location: 'quan 1',
-    },
-    {
-      id: 2,
-      title: 'chien dich 1',
-      content: 'seco nhieu khuyen mai voucher',
-      location: 'quan 1',
-    },
-    {
-      id: 3,
-      title: 'chien dich 1',
-      content: 'seco nhieu khuyen mai voucher',
-      location: 'quan 1',
-    },
-    {
-      id: 4,
-      title: 'chien dich 1',
-      content: 'seco nhieu khuyen mai voucher',
-      location: 'quan 1',
-    },
-  ]);
+  const [campaigns, setCampaigns] = useState([]);
 
   const [groups, setGroups] = useState([
     {
@@ -84,7 +67,7 @@ export default function Home() {
       id: 2,
       icon: IconEntypo,
       nameIcon: 'drink',
-      text: 'Drinks',
+      text: 'Drink',
     },
     {
       id: 3,
@@ -111,28 +94,53 @@ export default function Home() {
   const openDrawer = () => {
     navigation.openDrawer();
   };
-  const renderItem = ({item}: any) => {
-    return (
-      <Card
-        title={item.title}
-        onPress={() => setSelectedId(item.id)}
-        content={item.content}
-        location={item.location}
-      />
-    );
+
+  const handleClickCampaign = item => {
+    setSelectedId(item?._id);
+    navigate('DetailCampaign', {
+      itemCampaign: item,
+    });
   };
+
+  const handleClickGroup = item => {
+    setSelectedId1(item.id);
+    navigate('Campaign', {
+      typeCampaign: item.text,
+    });
+  };
+
+  const handleClickSeeAll = item => {
+    navigate('Campaign', {
+      campaigns: campaigns,
+    });
+  };
+
+  const renderItem = ({item}: any) => {
+    return <Card {...item} onPress={() => handleClickCampaign(item)} />;
+  };
+
+
 
   const renderItem1 = ({item}: any) => {
     return (
       <ItemCard
-        onPress={() => setSelectedId1(item.id)}
+        onPress={() => handleClickGroup(item)}
         text={item.text}
         nameIcon={item.nameIcon}
         IconCT={item.icon}
       />
     );
   };
-  console.log('4444', user)
+  const getListCampaigns = async () => {
+    const {data} = await axiosGet(API.CAMPAIGN);
+    if (data.length) {
+      setCampaigns(data);
+    }
+  };
+
+  useEffect(() => {
+    getListCampaigns();
+  }, []);
   return (
     <Header isGradientBar>
       <View style={styles.dashboard}>
@@ -178,7 +186,7 @@ export default function Home() {
             <View style={styles.campaigns}>
               <View style={styles.titleCampaigns}>
                 <Text style={styles.textCampaigns}>Newest Campaigns</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleClickSeeAll}>
                   <Text style={styles.buttonCampaigns}>See all</Text>
                 </TouchableOpacity>
               </View>
@@ -192,7 +200,7 @@ export default function Home() {
                 ItemSeparatorComponent={ItemSeparator}
               />
             </View>
-            <View style={styles.vouchers}>
+            {/* <View style={styles.vouchers}>
               <View style={styles.titleVouchers}>
                 <Text style={styles.textVouchers}>Newest Vouchers</Text>
                 <TouchableOpacity>
@@ -208,7 +216,7 @@ export default function Home() {
                 horizontal
                 ItemSeparatorComponent={ItemSeparator}
               />
-            </View>
+            </View> */}
           </ScrollView>
         </View>
       </View>
