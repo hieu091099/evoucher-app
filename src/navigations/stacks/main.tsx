@@ -12,6 +12,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useDispatch} from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import IconA from 'react-native-vector-icons/AntDesign';
 
 import routes from '../../utils/routes';
 import {logout} from '../../redux/actions/authAction';
@@ -27,6 +28,9 @@ import Play from '../../screens/Main/Game/RockPaper/Play';
 import DetailVoucher from '../../screens/Main/Voucher/DetailVoucher';
 import SpinAndWin from '../../screens/Main/Game/SpinAndWin/SpinAndWin';
 import Campain from '../../screens/Main/Campain';
+import DetailCampaign from '../../screens/Main/Campain/DetailCampain';
+import HeaderCustom from '../../components/HeaderCustom/HeaderCustom';
+import {useNavigation} from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -178,6 +182,18 @@ export const MainTab = () => {
   );
 };
 const MainStack = () => {
+  const headerLeft = () => {
+    const navigation = useNavigation();
+    return (
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={{
+          marginRight: 20,
+        }}>
+        <IconA name="arrowleft" size={30} color={'white'} />
+      </TouchableOpacity>
+    );
+  };
   return (
     <>
       <Stack.Navigator>
@@ -214,7 +230,25 @@ const MainStack = () => {
         <Stack.Screen
           name={'Campaign'}
           component={Campain}
+          options={{
+            headerLeft: headerLeft,
+            headerStyle: {backgroundColor: '#3f51b5'},
+            headerTintColor: 'white',
+          }}
+        />
+        {/* <Stack.Screen
+          name={'Campaign'}
+          component={Campain}
           options={{headerShown: false}}
+        /> */}
+        <Stack.Screen
+          name={'DetailCampaign'}
+          component={DetailCampaign}
+          options={{
+            headerLeft: headerLeft,
+            headerStyle: {backgroundColor: '#3f51b5'},
+            headerTintColor: 'white',
+          }}
         />
       </Stack.Navigator>
     </>

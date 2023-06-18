@@ -5,6 +5,7 @@ import {
   Text,
   ScrollView,
   TouchableWithoutFeedback,
+  ActivityIndicator,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
@@ -119,8 +120,6 @@ export default function Home() {
     return <Card {...item} onPress={() => handleClickCampaign(item)} />;
   };
 
-
-
   const renderItem1 = ({item}: any) => {
     return (
       <ItemCard
@@ -190,15 +189,21 @@ export default function Home() {
                   <Text style={styles.buttonCampaigns}>See all</Text>
                 </TouchableOpacity>
               </View>
-              <FlatList
-                style={styles.listCampaigns}
-                data={campaigns}
-                renderItem={renderItem}
-                keyExtractor={item => item.id}
-                extraData={selectedId}
-                horizontal
-                ItemSeparatorComponent={ItemSeparator}
-              />
+              {campaigns.length === 0 ? (
+                <View style={{marginTop: 30}}>
+                  <ActivityIndicator size="large" />
+                </View>
+              ) : (
+                <FlatList
+                  style={styles.listCampaigns}
+                  data={campaigns}
+                  renderItem={renderItem}
+                  keyExtractor={item => item.id}
+                  extraData={selectedId}
+                  horizontal
+                  ItemSeparatorComponent={ItemSeparator}
+                />
+              )}
             </View>
             {/* <View style={styles.vouchers}>
               <View style={styles.titleVouchers}>

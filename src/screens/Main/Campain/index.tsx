@@ -1,12 +1,19 @@
 import React, {useState, useEffect, useMemo} from 'react';
-import {View, FlatList, TouchableOpacity, Text, ScrollView} from 'react-native';
+import {
+  View,
+  FlatList,
+  TouchableOpacity,
+  Text,
+  ScrollView,
+  ActivityIndicator,
+} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import IconOcticons from 'react-native-vector-icons/Octicons';
 import IconIon from 'react-native-vector-icons/Ionicons';
 import IconEntypo from 'react-native-vector-icons/Entypo';
-import {useRoute} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import Card from '../../../components/Card';
-
+import Icon from 'react-native-vector-icons/AntDesign';
 import {goBack} from '../../../navigations/services';
 import Header from '../../../components/Header';
 import colors from '../../../utils/color';
@@ -49,11 +56,12 @@ const ItemCard = ({IconCT, text, nameIcon, onPress, activeTab}: any) => {
 
 export default function Campain() {
   const route = useRoute();
-  const {typeCampaign, campaigns: campaignsProps} = route.params;
+  const {typeCampaign, campaigns} =
+    route.params.length !== 0 ? route.params : {};
   const [searchData, setSearchData] = useState('');
   const [selectedId1, setSelectedId1] = useState('');
   const [selectedId, setSelectedId] = useState('');
-  const [campaigns, setCampaigns] = useState([...campaignsProps]);
+  const [campaignss, setCampaignss] = useState([]);
   const [activeTab, setActiveTab] = useState(typeCampaign || '');
 
   const [groups, setGroups] = useState([
@@ -100,30 +108,33 @@ export default function Campain() {
 
   const filterGroupCampaign = useMemo(() => {
     if (activeTab === 'Food') {
-      return campaigns.filter(item => item.type === activeTab);
+      return campaignss.filter(item => item.type === activeTab);
     }
     if (activeTab === 'Drink') {
-      return campaigns.filter(item => item.type === activeTab);
+      return campaignss.filter(item => item.type === activeTab);
     }
     if (activeTab === 'Beauti') {
-      return campaigns.filter(item => item.type === activeTab);
+      return campaignss.filter(item => item.type === activeTab);
     }
     if (activeTab === 'Cinema') {
-      return campaigns.filter(item => item.type === activeTab);
+      return campaignss.filter(item => item.type === activeTab);
     }
     if (activeTab === 'Pharma') {
-      return campaigns.filter(item => item.type === activeTab);
+      return campaignss.filter(item => item.type === activeTab);
     }
-    return campaigns;
+    return campaignss;
   }, [activeTab, campaigns]);
 
   const finalDataGroupCampaign = useMemo(() => {
     if ([null, '', undefined].includes(activeTab)) {
       if (!searchData.length) {
-        return campaigns;
+        return campaignss;
       }
-      return campaigns.filter(campaign =>
-        campaign.name.toLowerCase().includes(searchData.toLowerCase()),
+      return campaignss.filter(campaign =>
+        campaign.name
+          .toString()
+          .toLowerCase()
+          .includes(searchData.toString().toLowerCase()),
       );
     }
     return filterGroupCampaign.filter(campaign =>
@@ -143,7 +154,9 @@ export default function Campain() {
     );
   };
 
-  const handleClickCampaign = () => {};
+  const handleClickCampaign = item => {
+    console.log(item);
+  };
 
   const renderItem = ({item}: any) => {
     return (
@@ -153,8 +166,9 @@ export default function Campain() {
 
   const getListCampaigns = async () => {
     const {data} = await axiosGet(API.CAMPAIGN);
+
     if (data.length) {
-      setCampaigns(data);
+      setCampaignss(data);
     }
   };
 
@@ -182,6 +196,7 @@ export default function Campain() {
             ItemSeparatorComponent={ItemSeparator1}
           />
         </View>
+
         <FlatList
           style={styles.listCampaigns}
           data={finalDataGroupCampaign}
